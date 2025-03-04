@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>Примеры атрибутов img</h1>
-    <img src="images/example.jpg" alt="Пример изображения" width="300">
+    <img src="lab1/aquaria.jpg" alt="черепашка" width="300">
     <p>Изображение с атрибутами width и alt.</p>
 </body>
 </html>
