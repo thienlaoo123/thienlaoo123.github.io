@@ -1,22 +1,27 @@
 body {
-    background-color: black;
-    color: white;
+    background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+    background-color: #f4f4f4;
+    color: #333333;
     font-size: 1.5rem;
     line-height: 2rem;
 }
 
-p {
-    text-align: right;
-}
-
 h1, h2 {
-    text-align: right;
-    font-family: Arial, sans-serif;
-    color: red;
+    font-family: 'Roboto', sans-serif;
+    color: #2c3e50;
 }
 
-em {
-    color: green;
+strong {
+    font-family: 'Caveat', cursive;
+}
+
+article {
+    border: 2px solid #cccccc;
+    border-radius: 15px;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .wrapper {
