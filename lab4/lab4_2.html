@@ -1,124 +1,111 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Оформление вертикального меню</title>
-  <style>
-    /* Общий фон страницы */
-    html {
-      background: #f0f0f0;
-    }
+    <meta charset="UTF-8">
+    <title>Оформление вертикального меню</title>
+    <style>
+        /* Общий фон страницы */
+        html {
+            background: #f0f0f0;
+        }
 
-    /* Блок меню */
-    .menu {
-      width: 200px;
-      background: #fff;
-      padding: 0;
-      margin: 20px;
-    }
+        /* Блок меню */
+        .menu {
+            width: 200px;
+            background: #fff;
+            margin: 20px;
+            padding: 0;
+        }
 
-    /* Обнуление отступов для списков */
-    .menu ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
+        /* Сбрасываем отступы у списков */
+        .menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
 
-    /* Верхний уровень пунктов меню */
-    .menu > ul > li {
-      background: url("plus.gif") no-repeat 0 10px;
-      margin: 0;
-      padding: 10px 0 10px 25px; /* отступ слева для иконки */
-      border-bottom: 1px solid #ccc;
-      cursor: pointer;
-      position: relative;
-    }
+        /* Общие стили для li */
+        .menu li {
+            position: relative;
+            border-bottom: 1px solid #ccc;
+        }
 
-    /* Ссылка в пункте меню – синий текст с подчёркиванием */
-    .menu li a {
-      text-decoration: underline;
-      color: blue;
-      display: block;
-    }
+        /* Ссылки – синие, подчёркнутые, во всю ширину пункта */
+        .menu li a {
+            color: blue;
+            text-decoration: underline;
+            display: block;
+            padding: 8px 0 8px 25px; /* Отступ слева, чтобы иконка не перекрывала текст */
+        }
 
-    /* При наведении можно изменить оттенок синего */
-    .menu li a:hover {
-      color: darkblue;
-    }
+        /* При наведении – меняем оттенок синего */
+        .menu li a:hover {
+            color: darkblue;
+        }
 
-    /* Вложенные списки скрыты по умолчанию */
-    .menu li ul {
-      display: none;
-    }
+        /* Главные пункты меню – по умолчанию иконка "плюс" */
+        .menu > ul > li {
+            background: url("plus.gif") no-repeat 5px 10px;
+            cursor: pointer; /* Показываем, что можно навести курсор */
+        }
 
-    /* Пункты вложенного списка – иконка "точка" */
-    .menu li li {
-      background: url("point.gif") no-repeat 0 7px;
-      padding: 5px 0 5px 20px;
-      border-bottom: 1px solid #ccc;
-    }
-  </style>
+        /* При наведении меняем иконку на "минус" */
+        .menu > ul > li:hover {
+            background: url("minus.gif") no-repeat 5px 10px;
+        }
+
+        /* Подменю (вложенные списки) скрыты по умолчанию */
+        .menu li ul {
+            display: none;
+        }
+
+        /* При наведении на пункт верхнего уровня показываем подменю */
+        .menu li:hover ul {
+            display: block;
+        }
+
+        /* Пункты вложенного списка – иконка "точка" */
+        .menu li li {
+            background: url("point.gif") no-repeat 5px 7px;
+            padding-left: 25px; /* Чтобы не налезать на иконку */
+        }
+    </style>
 </head>
 <body>
-  <nav class="menu">
-    <ul>
-      <li>
-        <a href="#">Фильмы</a>
+    <nav class="menu">
         <ul>
-          <li><a href="#">Экшн</a></li>
-          <li><a href="#">Мелодрамы</a></li>
-          <li><a href="#">Сериалы</a></li>
-          <li><a href="#">Семейные</a></li>
+            <li><a href="#">Фильмы</a>
+                <ul>
+                    <li><a href="#">Экшн</a></li>
+                    <li><a href="#">Мелодрамы</a></li>
+                    <li><a href="#">Сериалы</a></li>
+                    <li><a href="#">Семейные</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Музыка</a>
+                <ul>
+                    <li><a href="#">Классика</a></li>
+                    <li><a href="#">Джаз</a></li>
+                    <li><a href="#">Рок</a></li>
+                    <li><a href="#">Грандж</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Софт</a>
+                <ul>
+                    <li><a href="#">Графика</a></li>
+                    <li><a href="#">3D-моделирование</a></li>
+                    <li><a href="#">Машинопись</a></li>
+                    <li><a href="#">Переводчики</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Игры</a>
+                <ul>
+                    <li><a href="#">РПГ</a></li>
+                    <li><a href="#">Шутеры</a></li>
+                    <li><a href="#">Пасьянсы</a></li>
+                </ul>
+            </li>
         </ul>
-      </li>
-      <li>
-        <a href="#">Музыка</a>
-        <ul>
-          <li><a href="#">Классика</a></li>
-          <li><a href="#">Джаз</a></li>
-          <li><a href="#">Рок</a></li>
-          <li><a href="#">Грандж</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">Софт</a>
-        <ul>
-          <li><a href="#">Графика</a></li>
-          <li><a href="#">3D-моделирование</a></li>
-          <li><a href="#">Машинопись</a></li>
-          <li><a href="#">Переводчики</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">Игры</a>
-        <ul>
-          <li><a href="#">РПГ</a></li>
-          <li><a href="#">Шутеры</a></li>
-          <li><a href="#">Пасьянсы</a></li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
-  
-  <script>
-    // Добавляем обработчик клика для каждого пункта первого уровня
-    document.querySelectorAll('.menu > ul > li > a').forEach(function(link) {
-      link.addEventListener('click', function(e) {
-        e.preventDefault(); // предотвращаем переход по ссылке
-        var parentLi = this.parentElement;
-        var submenu = parentLi.querySelector('ul');
-        if (submenu) {
-          // Переключаем видимость подменю
-          if (submenu.style.display === 'block') {
-            submenu.style.display = 'none';
-            parentLi.style.background = 'url("plus.gif") no-repeat 0 10px';
-          } else {
-            submenu.style.display = 'block';
-            parentLi.style.background = 'url("minus.gif") no-repeat 0 10px';
-          }
-        }
-      });
-    });
-  </script>
+    </nav>
 </body>
 </html>
