@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Оформление вертикального меню</title>
+    <style>
+        /* Общий фон страницы */
+        html {
+            background: #f0f0f0;
+        }
+
+        /* Блок меню */
+        .menu {
+            width: 200px;
+            background: #fff;
+            padding: 0;
+            margin: 20px;
+        }
+
+        /* Обнуление отступов для списков */
+        .menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Верхний уровень пунктов меню */
+        .menu > ul > li {
+            /* Изначально – иконка "плюс" */
+            background: url("plus.gif") no-repeat 0 10px;
+            margin: 0;
+            padding: 10px 0 10px 25px; /* отступ слева, чтобы иконка не перекрывала текст */
+            border-bottom: 1px solid #ccc;
+            cursor: pointer; /* чтобы визуально показывать, что пункт кликабелен */
+            position: relative;
+        }
+
+        /* При наведении на верхний пункт – иконка "минус" */
+        .menu > ul > li:hover {
+            background: url("minus.gif") no-repeat 0 10px;
+        }
+
+        /* Ссылка в пункте меню */
+        .menu li a {
+            text-decoration: none;
+            color: #333;
+            display: block;  /* чтобы вся строка в li работала как ссылка */
+        }
+
+        /* При наведении на ссылку меняем цвет */
+        .menu li a:hover {
+            color: #e00; 
+        }
+
+        /* Вложенные списки изначально скрыты */
+        .menu li ul {
+            display: none;
+        }
+
+        /* При наведении на li (верхний уровень) показываем вложенный список */
+        .menu li:hover ul {
+            display: block;
+        }
+
+        /* Пункты вложенного списка */
+        .menu li li {
+            /* Иконка "точка" */
+            background: url("point.gif") no-repeat 0 7px;
+            padding: 5px 0 5px 20px;
+            border-bottom: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <nav class="menu">
+        <ul>
+            <li><a href="#">Фильмы</a>
+                <ul>
+                    <li><a href="#">Экшн</a></li>
+                    <li><a href="#">Мелодрамы</a></li>
+                    <li><a href="#">Сериалы</a></li>
+                    <li><a href="#">Семейные</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Музыка</a>
+                <ul>
+                    <li><a href="#">Классика</a></li>
+                    <li><a href="#">Джаз</a></li>
+                    <li><a href="#">Рок</a></li>
+                    <li><a href="#">Грандж</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Софт</a>
+                <ul>
+                    <li><a href="#">Графика</a></li>
+                    <li><a href="#">3D-моделирование</a></li>
+                    <li><a href="#">Машинопись</a></li>
+                    <li><a href="#">Переводчики</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Игры</a>
+                <ul>
+                    <li><a href="#">РПГ</a></li>
+                    <li><a href="#">Шутеры</a></li>
+                    <li><a href="#">Пасьянсы</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>
