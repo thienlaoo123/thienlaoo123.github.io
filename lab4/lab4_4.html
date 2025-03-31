@@ -2,101 +2,86 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Оформление вертикального меню с Font Awesome</title>
-    <!-- Подключаем Font Awesome через CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" 
-          integrity="sha512-xh6C4fYp1Giqo3t9PT+Xtj0OoZ2YW1dZrqR7lH2nYlI38P6zCLrmf5IWb3H1kk8k0yN/eH8hOqPSK+Xbf0e0Pg==" 
-          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Меню с Font Awesome</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        /* Общий фон страницы */
         html {
             background: #f0f0f0;
         }
-
-        /* Блок меню */
+        
         .menu {
             width: 200px;
             background: #fff;
-            margin: 20px;
-            padding: 0;
+            font-family: Arial, sans-serif;
+            padding: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
         }
-
-        /* Сбрасываем отступы у списков */
+        
         .menu ul {
             list-style: none;
-            margin: 0;
             padding: 0;
+            margin: 0;
         }
-
-        /* Верхние пункты меню */
+        
         .menu > ul > li {
-            position: relative;
-            padding: 10px 0 10px 30px; /* отступ слева для иконки */
-            border-bottom: 1px solid #ccc;
-            cursor: pointer;
+            border-bottom: 1px solid #e0e0e0;
         }
-
-        /* Стили для ссылок */
+        
         .menu li a {
-            text-decoration: none;
+            display: block;
+            padding: 8px 10px 8px 25px;
             color: #333;
-            display: block;
-        }
-        .menu li a:hover {
-            color: #e00;
-        }
-
-        /* Подменю скрыты по умолчанию */
-        .menu li ul {
-            display: none;
-        }
-        /* При наведении на верхний пункт показываем подменю */
-        .menu li:hover ul {
-            display: block;
-        }
-
-        /* Стили для вложенных (под)пунктов меню */
-        .menu li li {
-            padding: 5px 0 5px 25px; /* отступ для иконки */
-            border-bottom: 1px solid #ccc;
+            text-decoration: none;
             position: relative;
         }
-
-        /* Добавляем иконки через псевдоэлемент ::before */
-        /* Для верхних пунктов – по умолчанию показываем "square-plus" (закрытый пункт) */
-        .menu > ul > li::before {
-            content: "\f0fe"; /* Unicode для square-plus */
-            font-family: "Font Awesome 6 Free"; 
-            font-weight: 900; /* для solid-иконок */
-            display: inline-block;
-            position: absolute;
-            left: 8px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 16px;
+        
+        .menu li a:hover {
+            background-color: #f5f5f5;
         }
-        /* При наведении (раскрытии пункта) меняем иконку на "square-minus" */
-        .menu > ul > li:hover::before {
-            content: "\f146"; /* Unicode для square-minus */
-        }
-        /* Для простых (вложенных) элементов списка – иконка "circle-dot" */
-        .menu li li::before {
-            content: "\f192"; /* Unicode для circle-dot */
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            display: inline-block;
+        
+        /* Иконки Font Awesome */
+        .menu > ul > li > a::before {
+            content: "\f0fe"; /* square-plus */
+            font-family: 'FontAwesome';
             position: absolute;
             left: 5px;
             top: 50%;
             transform: translateY(-50%);
             font-size: 14px;
         }
+        
+        .menu li li a::before {
+            content: "\f192"; /* circle-dot */
+            font-family: 'FontAwesome';
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+        }
+        
+        /* Спрятать подменю по умолчанию */
+        .menu li > ul {
+            display: none;
+            padding-left: 15px;
+        }
+        
+        /* Показать подменю при наведении */
+        .menu > ul > li:hover > ul {
+            display: block;
+        }
+        
+        /* Смена иконки при открытии */
+        .menu > ul > li:hover > a::before {
+            content: "\f146"; /* square-minus */
+        }
     </style>
 </head>
 <body>
     <nav class="menu">
         <ul>
-            <li><a href="#">Фильмы</a>
+            <li>
+                <a href="#">Фильмы</a>
                 <ul>
                     <li><a href="#">Экшн</a></li>
                     <li><a href="#">Мелодрамы</a></li>
@@ -104,7 +89,8 @@
                     <li><a href="#">Семейные</a></li>
                 </ul>
             </li>
-            <li><a href="#">Музыка</a>
+            <li>
+                <a href="#">Музыка</a>
                 <ul>
                     <li><a href="#">Классика</a></li>
                     <li><a href="#">Джаз</a></li>
@@ -112,7 +98,8 @@
                     <li><a href="#">Грандж</a></li>
                 </ul>
             </li>
-            <li><a href="#">Софт</a>
+            <li>
+                <a href="#">Софт</a>
                 <ul>
                     <li><a href="#">Графика</a></li>
                     <li><a href="#">3D-моделирование</a></li>
@@ -120,7 +107,8 @@
                     <li><a href="#">Переводчики</a></li>
                 </ul>
             </li>
-            <li><a href="#">Игры</a>
+            <li>
+                <a href="#">Игры</a>
                 <ul>
                     <li><a href="#">РПГ</a></li>
                     <li><a href="#">Шутеры</a></li>
