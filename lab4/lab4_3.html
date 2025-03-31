@@ -2,113 +2,86 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Оформление вертикального меню (CSS Sprite)</title>
+    <title>Меню с Font Awesome</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        /* Общий фон страницы */
         html {
             background: #f0f0f0;
         }
-
-        /* Блок меню */
+        
         .menu {
             width: 200px;
             background: #fff;
-            margin: 20px;
-            padding: 0;
+            font-family: Arial, sans-serif;
+            padding: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
         }
-
-        /* Сбрасываем отступы у списков */
+        
         .menu ul {
             list-style: none;
-            margin: 0;
             padding: 0;
-        }
-
-        /* Убираем маркеры списков и оформляем верхние пункты меню */
-        .menu > ul > li {
             margin: 0;
-            padding: 10px 0 10px 25px;
-            border-bottom: 1px solid #ccc;
-            position: relative;
-            cursor: pointer; /* показывает, что элемент кликабелен */
         }
-
-        /* Ссылки в меню */
+        
+        .menu > ul > li {
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
         .menu li a {
-            text-decoration: none;
+            display: block;
+            padding: 8px 10px 8px 25px;
             color: #333;
-            display: block; /* чтобы вся область li была кликабельной */
+            text-decoration: none;
+            position: relative;
         }
-
-        /* При наведении меняем цвет текста */
+        
         .menu li a:hover {
-            color: #e00;
+            background-color: #f5f5f5;
         }
-
-        /* Вложенные списки изначально скрыты */
-        .menu li ul {
+        
+        /* Иконки Font Awesome */
+        .menu > ul > li > a::before {
+            content: "\f0fe"; /* square-plus */
+            font-family: 'FontAwesome';
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+        }
+        
+        .menu li li a::before {
+            content: "\f192"; /* circle-dot */
+            font-family: 'FontAwesome';
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+        }
+        
+        /* Спрятать подменю по умолчанию */
+        .menu li > ul {
             display: none;
+            padding-left: 15px;
         }
-
-        /* При наведении показываем вложенный список */
-        .menu li:hover ul {
+        
+        /* Показать подменю при наведении */
+        .menu > ul > li:hover > ul {
             display: block;
         }
-
-        /* Вложенные пункты (2-й уровень) */
-        .menu li li {
-            padding: 5px 0 5px 20px;
-            border-bottom: 1px solid #ccc;
-        }
-
-        /*
-         * Подключаем спрайт через псевдоэлемент ::before
-         * Предполагаем, что в спрайте:
-         *  - Иконка "минус" (background-position: 0 0)
-         *  - Иконка "плюс"  (background-position: 0 -16px)
-         *  - Иконка "точка" (background-position: 0 -32px)
-         */
-
-        /* Для верхних пунктов по умолчанию показываем "плюс" */
-        .menu > ul > li::before {
-            content: "";
-            display: inline-block;
-            width: 16px;   /* ширина одной иконки */
-            height: 16px;  /* высота одной иконки */
-            vertical-align: middle;
-            margin-right: 5px;
-            background: url("css_sprites.png") no-repeat 0 -16px; /* "плюс" */
-            position: absolute;
-            left: 5px; /* чтобы иконка была левее текста */
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        /* При наведении на верхний пункт меняем иконку на "минус" */
-        .menu > ul > li:hover::before {
-            background-position: 0 0; /* "минус" */
-        }
-
-        /* У вложенных пунктов отображаем иконку "точка" */
-        .menu li li::before {
-            content: "";
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-            vertical-align: middle;
-            margin-right: 5px;
-            background: url("css_sprites.png") no-repeat 0 -32px; /* "точка" */
-            position: absolute;
-            left: 10px; /* чуть больше отступ, чтобы не наезжать на текст */
-            top: 50%;
-            transform: translateY(-50%);
+        
+        /* Смена иконки при открытии */
+        .menu > ul > li:hover > a::before {
+            content: "\f146"; /* square-minus */
         }
     </style>
 </head>
 <body>
     <nav class="menu">
         <ul>
-            <li><a href="#">Фильмы</a>
+            <li>
+                <a href="#">Фильмы</a>
                 <ul>
                     <li><a href="#">Экшн</a></li>
                     <li><a href="#">Мелодрамы</a></li>
@@ -116,7 +89,8 @@
                     <li><a href="#">Семейные</a></li>
                 </ul>
             </li>
-            <li><a href="#">Музыка</a>
+            <li>
+                <a href="#">Музыка</a>
                 <ul>
                     <li><a href="#">Классика</a></li>
                     <li><a href="#">Джаз</a></li>
@@ -124,7 +98,8 @@
                     <li><a href="#">Грандж</a></li>
                 </ul>
             </li>
-            <li><a href="#">Софт</a>
+            <li>
+                <a href="#">Софт</a>
                 <ul>
                     <li><a href="#">Графика</a></li>
                     <li><a href="#">3D-моделирование</a></li>
@@ -132,7 +107,8 @@
                     <li><a href="#">Переводчики</a></li>
                 </ul>
             </li>
-            <li><a href="#">Игры</a>
+            <li>
+                <a href="#">Игры</a>
                 <ul>
                     <li><a href="#">РПГ</a></li>
                     <li><a href="#">Шутеры</a></li>
