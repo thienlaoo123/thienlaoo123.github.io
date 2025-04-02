@@ -1,35 +1,50 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Использование inline-block для колонок</title>
-<style type="text/css">
-body {
-    font-family: Arial, sans-serif;
-}
-.column {
-    display: inline-block;
-    vertical-align: top;
-    box-sizing: border-box;
-    padding: 10px;
-}
-#left {
-    width: 200px;
-    background: #ccf;
-}
-#right {
-    width: 200px;
-    background: #fcc;
-}
-#center {
-    width: 600px;
-    background: #cfc;
-}
-</style>
+  <meta charset="utf-8">
+  <title>Три колонки с inline-block</title>
+  <style>
+    /* Обёртка для колонок */
+    .wrapper {
+      margin: 0 auto;          /* Центрирование обёртки */
+      min-width: 1000px;        /* Сумма ширин колонок: 200 + 600 + 200 */
+      font-size: 0;             /* Убираем пробелы между inline-block элементами */
+    }
+    /* Общий стиль для колонок */
+    .column {
+      display: inline-block;
+      vertical-align: top;
+      font-size: 16px;          /* Восстанавливаем нормальный размер шрифта для содержимого */
+      padding: 10px;
+    }
+    /* Левая колонка */
+    #left {
+      width: 200px;
+      background: #ccf;
+    }
+    /* Центральная колонка */
+    #center {
+      width: 600px;
+      background: #cfc;
+    }
+    /* Правая колонка */
+    #right {
+      width: 200px;
+      background: #fcc;
+    }
+  </style>
 </head>
 <body>
-    <div id="left" class="column">left<br>left<br>left<br>left<br>left</div>
-    <div id="center" class="column">center text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text</div>
-    <div id="right" class="column">right<br>right<br>right<br>right</div>
+  <div class="wrapper">
+    <div id="left" class="column">
+      Левая колонка<br>Контент...
+    </div>
+    <div id="center" class="column">
+      Центральная колонка<br>Контент...
+    </div>
+    <div id="right" class="column">
+      Правая колонка<br>Контент...
+    </div>
+  </div>
 </body>
 </html>
