@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <title>Оформление вертикального меню</title>
     <style>
-        /* Общий фон страницы */
+     
         html {
             background: #f0f0f0;
         }
 
-        /* Блок меню */
+
         .menu {
             width: 200px;
             background: #fff;
@@ -17,57 +17,57 @@
             padding: 0;
         }
 
-        /* Сбрасываем отступы у списков */
+
         .menu ul {
             list-style: none;
             margin: 0;
             padding: 0;
         }
 
-        /* Общие стили для li */
+
         .menu li {
             position: relative;
             border-bottom: 1px solid #ccc;
         }
 
-        /* Ссылки – синие, подчёркнутые, во всю ширину пункта */
+
         .menu li a {
             color: blue;
             text-decoration: underline;
             display: block;
-            padding: 8px 0 8px 25px; /* Отступ слева, чтобы иконка не перекрывала текст */
+            padding: 8px 0 8px 25px; 
         }
 
-        /* При наведении – меняем оттенок синего */
+
         .menu li a:hover {
             color: darkblue;
         }
 
-        /* Главные пункты меню – по умолчанию иконка "плюс" */
+
         .menu > ul > li {
             background: url("plus.gif") no-repeat 5px 10px;
-            cursor: pointer; /* Показываем, что можно навести курсор */
+
         }
 
-        /* При наведении меняем иконку на "минус" */
+
         .menu > ul > li:hover {
             background: url("minus.gif") no-repeat 5px 10px;
         }
 
-        /* Подменю (вложенные списки) скрыты по умолчанию */
+
         .menu li ul {
             display: none;
         }
 
-        /* При наведении на пункт верхнего уровня показываем подменю */
+
         .menu li:hover ul {
             display: block;
         }
 
-        /* Пункты вложенного списка – иконка "точка" */
+
         .menu li li {
             background: url("point.gif") no-repeat 5px 7px;
-            padding-left: 25px; /* Чтобы не налезать на иконку */
+            padding-left: 25px; 
         }
     </style>
 </head>

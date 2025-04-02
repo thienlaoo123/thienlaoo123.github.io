@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <title>Оформление вертикального меню</title>
   <style>
-    /* Общий фон страницы */
+
     html {
       background: #f0f0f0;
     }
 
-    /* Блок меню */
+
     .menu {
       width: 200px;
       background: #fff;
@@ -17,41 +17,41 @@
       margin: 20px;
     }
 
-    /* Обнуление отступов для списков */
+
     .menu ul {
       list-style: none;
       margin: 0;
       padding: 0;
     }
 
-    /* Верхний уровень пунктов меню */
+
     .menu > ul > li {
       background: url("plus.gif") no-repeat 0 10px;
       margin: 0;
-      padding: 10px 0 10px 25px; /* отступ слева для иконки */
+      padding: 10px 0 10px 25px; 
       border-bottom: 1px solid #ccc;
       cursor: pointer;
       position: relative;
     }
 
-    /* Ссылка в пункте меню – синий текст с подчёркиванием */
+
     .menu li a {
       text-decoration: underline;
       color: blue;
       display: block;
     }
 
-    /* При наведении можно изменить оттенок синего */
+
     .menu li a:hover {
       color: darkblue;
     }
 
-    /* Вложенные списки скрыты по умолчанию */
+
     .menu li ul {
       display: none;
     }
 
-    /* Пункты вложенного списка – иконка "точка" */
+
     .menu li li {
       background: url("point.gif") no-repeat 0 7px;
       padding: 5px 0 5px 20px;
@@ -101,14 +101,14 @@
   </nav>
   
   <script>
-    // Добавляем обработчик клика для каждого пункта первого уровня
+
     document.querySelectorAll('.menu > ul > li > a').forEach(function(link) {
       link.addEventListener('click', function(e) {
-        e.preventDefault(); // предотвращаем переход по ссылке
+        e.preventDefault(); 
         var parentLi = this.parentElement;
         var submenu = parentLi.querySelector('ul');
         if (submenu) {
-          // Переключаем видимость подменю
+
           if (submenu.style.display === 'block') {
             submenu.style.display = 'none';
             parentLi.style.background = 'url("plus.gif") no-repeat 0 10px';
