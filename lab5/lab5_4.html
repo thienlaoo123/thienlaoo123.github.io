@@ -1,35 +1,46 @@
 <!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>Три колонки с flexbox</title>
-  <style>
-    .wrapper {
-      display: flex;
-      margin: 0 auto;         /* Центрирование обёртки */
-      min-width: 1000px;       /* 200px + 600px + 200px */
-      align-items: flex-start; /* Вертикальное выравнивание по верхнему краю */
-    }
-    #left {
-      width: 200px;
-      background: #ccf;
-      padding: 10px;
-    }
-    #center {
-      width: 600px;
-      background: #cfc;
-      padding: 10px;
-    }
-    #right {
-      width: 200px;
-      background: #fcc;
-      padding: 10px;
-    }
-  </style>
+<meta charset="utf-8">
+<title>Три колонки с flexbox</title>
+<style type="text/css">
+  /* Обёртка для колонок: flex-контейнер, центрирование и минимальная ширина */
+  .wrapper {
+    display: flex;
+    margin: 0 auto;          /* Центрирование контейнера */
+    min-width: 1000px;       /* 200px + 600px + 200px */
+  }
+  /* Левая колонка */
+  #left {
+    width: 200px;
+    background: #ccf;
+    padding: 10px;
+  }
+  /* Центральная колонка */
+  #center {
+    width: 600px;
+    background: #cfc;
+    padding: 10px;
+  }
+  /* Правая колонка */
+  #right {
+    width: 200px;
+    background: #fcc;
+    padding: 10px;
+  }
+</style>
 </head>
 <body>
-	<div id="left">left<br>left<br>left<br>left<br>left</div>
-	<div id="right">right<br>right<br>right<br>right</div>
-	<div id="center">center text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text</div>
+  <div class="wrapper">
+    <div id="left">
+      left<br>left<br>left<br>left<br>left
+    </div>
+    <div id="center">
+      center text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
+    </div>
+    <div id="right">
+      right<br>right<br>right<br>right
+    </div>
+  </div>
 </body>
 </html>

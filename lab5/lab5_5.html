@@ -1,24 +1,28 @@
 <!doctype html>
-<html lang="ru">
+<html>
 <head>
   <meta charset="utf-8">
   <title>Три колонки с CSS Grid</title>
-  <style>
+  <style type="text/css">
+    /* Обёртка для колонок */
     .wrapper {
       display: grid;
       grid-template-columns: 200px 600px 200px; /* Левая, центральная и правая колонки */
-      margin: 0 auto;                         /* Центрирование обёртки */
+      margin: 0 auto;                         /* Центрирование контейнера */
       min-width: 1000px;                       /* Сумма ширин колонок */
-      gap: 10px;                               /* Промежуток между колонками (опционально) */
+      gap: 10px;                               /* Опциональный промежуток между колонками */
     }
+    /* Левая колонка */
     #left {
       background: #ccf;
       padding: 10px;
     }
+    /* Центральная колонка */
     #center {
       background: #cfc;
       padding: 10px;
     }
+    /* Правая колонка */
     #right {
       background: #fcc;
       padding: 10px;
@@ -26,8 +30,16 @@
   </style>
 </head>
 <body>
-	<div id="left">left<br>left<br>left<br>left<br>left</div>
-	<div id="right">right<br>right<br>right<br>right</div>
-	<div id="center">center text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text</div>
+  <div class="wrapper">
+    <div id="left">
+      left<br>left<br>left<br>left<br>left
+    </div>
+    <div id="center">
+      center text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
+    </div>
+    <div id="right">
+      right<br>right<br>right<br>right
+    </div>
+  </div>
 </body>
 </html>
