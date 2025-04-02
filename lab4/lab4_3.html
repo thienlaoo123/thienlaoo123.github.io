@@ -1,135 +1,136 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>Оформление вертикального меню</title>
-    <style>
-        /* Общий фон страницы */
-        html {
-            background: #f0f0f0;
-        }
-        
-        /* Блок меню */
-        .menu {
-            width: 200px;
-            background: #fff;
-            margin: 20px;
-            padding: 0;
-        }
-        
-        /* Сбрасываем отступы у списков */
-        .menu ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        
-        /* Общие стили для элементов списка */
-        .menu li {
-            position: relative;
-            border-bottom: 1px solid #ccc;
-        }
-        
-        /* Ссылки — синие и подчёркнутые, отступ для размещения иконки */
-        .menu li a {
-            color: blue;
-            text-decoration: underline;
-            display: block;
-            padding: 10px 0 10px 35px;
-        }
-        
-        .menu li a:hover {
-            color: darkblue;
-        }
-        
-        /* Иконки для верхних пунктов меню через псевдоэлемент ::before */
-        .menu > ul > li::before {
-            content: "";
-            display: inline-block;
-            width: 16px;      /* ширина иконки */
-            height: 16px;     /* высота иконки */
-            background: url("css_sprites.png") no-repeat;
-            background-position: 0 -16px; /* по умолчанию показываем иконку "плюс" */
-            position: absolute;
-            left: 5px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-        
-        /* При наведении на верхний пункт меняем иконку на "минус" */
-        .menu > ul > li:hover::before {
-            background-position: 0 0;
-        }
-        
-        /* Вложенные списки (подменю) скрыты по умолчанию */
-        .menu li ul {
-            display: none;
-        }
-        
-        /* При наведении на элемент верхнего уровня подменю показывается */
-        .menu li:hover ul {
-            display: block;
-        }
-        
-        /* Стили для элементов подменю */
-        .menu li li {
-            padding: 5px 0 5px 35px;
-        }
-        
-        /* Иконка "точка" для элементов подменю */
-        .menu li li::before {
-            content: "";
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-            background: url("css_sprites.png") no-repeat;
-            background-position: 0 -32px; /* иконка "точка" */
-            position: absolute;
-            left: 5px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Меню на CSS</title>
+  <style>
+    /* Общий фон страницы */
+    html {
+      background: #f0f0f0;
+    }
+
+    /* Блок меню */
+    .menu {
+      width: 200px;
+      background: #fff;
+      font-family: Arial, sans-serif;
+      border-radius: 5px;
+      padding: 5px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+
+    /* Сброс стилей списка */
+    .menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* Разделитель между пунктами меню */
+    .menu > ul > li {
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    /* Стили для ссылок меню */
+    .menu li a {
+      display: block;
+      border-radius: 5px;
+      padding: 8px 10px 8px 25px;
+      color: #333;
+      text-decoration: none;
+      position: relative;
+    }
+
+    .menu li a:hover {
+      background-color: #f5f5f5;
+    }
+
+    /* Псевдоэлемент ::before для главных пунктов меню – иконка "плюс" */
+    .menu > ul > li > a::before {
+      content: "";
+      position: absolute;
+      left: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      background: url('assets/css_sprites.png') no-repeat -46px -10px; /* Иконка "плюс" */
+      cursor: pointer;
+    }
+
+    /* Псевдоэлемент ::before для пунктов подменю – иконка "точка" */
+    .menu li li a::before {
+      content: "";
+      position: absolute;
+      left: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      background: url('assets/css_sprites.png') no-repeat -10px -10px; /* Иконка "точка" */
+      cursor: text;
+    }
+
+    /* Скрытие подменю по умолчанию */
+    .menu li > ul {
+      display: none;
+      padding-left: 15px;
+    }
+
+    /* Показ подменю при наведении или фокусе на главном пункте */
+    .menu > ul > li:hover > ul,
+    .menu > ul > li:focus-within > ul,
+    .menu > ul > li > a:focus + ul {
+      display: block;
+    }
+
+    /* При наведении или фокусе на главном пункте меняем иконку с "плюс" на "минус" */
+    .menu > ul > li:hover > a::before,
+    .menu > ul > li:focus-within > a::before,
+    .menu > ul > li > a:focus::before {
+      background: url('assets/css_sprites.png') no-repeat -10px -46px; /* Иконка "минус" */
+    }
+  </style>
 </head>
 <body>
-    <nav class="menu">
+  <nav class="menu">
+    <ul>
+      <li>
+        <a href="#">Фильмы</a>
         <ul>
-            <li>
-                <a href="#">Фильмы</a>
-                <ul>
-                    <li><a href="#">Экшн</a></li>
-                    <li><a href="#">Мелодрамы</a></li>
-                    <li><a href="#">Сериалы</a></li>
-                    <li><a href="#">Семейные</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Музыка</a>
-                <ul>
-                    <li><a href="#">Классика</a></li>
-                    <li><a href="#">Джаз</a></li>
-                    <li><a href="#">Рок</a></li>
-                    <li><a href="#">Грандж</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Софт</a>
-                <ul>
-                    <li><a href="#">Графика</a></li>
-                    <li><a href="#">3D-моделирование</a></li>
-                    <li><a href="#">Машинопись</a></li>
-                    <li><a href="#">Переводчики</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Игры</a>
-                <ul>
-                    <li><a href="#">РПГ</a></li>
-                    <li><a href="#">Шутеры</a></li>
-                    <li><a href="#">Пасьянсы</a></li>
-                </ul>
-            </li>
+          <li><a href="#">Экшн</a></li>
+          <li><a href="#">Мелодрамы</a></li>
+          <li><a href="#">Сериалы</a></li>
+          <li><a href="#">Семейные</a></li>
         </ul>
-    </nav>
+      </li>
+      <li>
+        <a href="#">Музыка</a>
+        <ul>
+          <li><a href="#">Классика</a></li>
+          <li><a href="#">Джаз</a></li>
+          <li><a href="#">Рок</a></li>
+          <li><a href="#">Грандж</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Софт</a>
+        <ul>
+          <li><a href="#">Графика</a></li>
+          <li><a href="#">3D-моделирование</a></li>
+          <li><a href="#">Машинопись</a></li>
+          <li><a href="#">Переводчики</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Игры</a>
+        <ul>
+          <li><a href="#">РПГ</a></li>
+          <li><a href="#">Шутеры</a></li>
+          <li><a href="#">Пасьянсы</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
 </body>
 </html>
