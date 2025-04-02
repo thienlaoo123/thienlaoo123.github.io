@@ -1,45 +1,45 @@
 <!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>Три колонки с CSS Grid</title>
-  <style type="text/css">
-    /* Обёртка для колонок */
-    .wrapper {
-      display: grid;
-      grid-template-columns: 200px 600px 200px; /* Левая, центральная и правая колонки */
-      margin: 0 auto;                         /* Центрирование контейнера */
-      min-width: 1000px;                       /* Сумма ширин колонок */
-      gap: 10px;                               /* Опциональный промежуток между колонками */
-    }
-    /* Левая колонка */
-    #left {
-      background: #ccf;
-      padding: 10px;
-    }
-    /* Центральная колонка */
-    #center {
-      background: #cfc;
-      padding: 10px;
-    }
-    /* Правая колонка */
-    #right {
-      background: #fcc;
-      padding: 10px;
-    }
-  </style>
+<meta charset="utf-8">
+<title>Использование grid для колонок</title>
+<style type="text/css">
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.container {
+    display: grid;
+    grid-template-columns: 200px 600px 200px;
+    width: 100%;
+    max-width: 1000px;
+    gap: 10px;
+}
+#left {
+    background: #ccf;
+    box-sizing: border-box;
+    padding: 10px;
+}
+#right {
+    background: #fcc;
+    box-sizing: border-box;
+    padding: 10px;
+}
+#center {
+    background: #cfc;
+    box-sizing: border-box;
+    padding: 10px;
+}
+</style>
 </head>
 <body>
-  <div class="wrapper">
-    <div id="left">
-      left<br>left<br>left<br>left<br>left
+    <div class="container">
+        <div id="left">left<br>left<br>left<br>left<br>left</div>
+        <div id="center">center text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text</div>
+        <div id="right">right<br>right<br>right<br>right</div>
     </div>
-    <div id="center">
-      center text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
-    </div>
-    <div id="right">
-      right<br>right<br>right<br>right
-    </div>
-  </div>
 </body>
 </html>
