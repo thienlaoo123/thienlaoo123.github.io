@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Три колонки с CSS Grid</title>
+  <style>
+    .wrapper {
+      display: grid;
+      grid-template-columns: 200px 600px 200px; /* Левая, центральная и правая колонки */
+      margin: 0 auto;                         /* Центрирование обёртки */
+      min-width: 1000px;                       /* Сумма ширин колонок */
+      gap: 10px;                               /* Промежуток между колонками (опционально) */
+    }
+    #left {
+      background: #ccf;
+      padding: 10px;
+    }
+    #center {
+      background: #cfc;
+      padding: 10px;
+    }
+    #right {
+      background: #fcc;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div id="left">
+      Левая колонка<br>Контент...
+    </div>
+    <div id="center">
+      Центральная колонка<br>Контент...
+    </div>
+    <div id="right">
+      Правая колонка<br>Контент...
+    </div>
+  </div>
+</body>
+</html>

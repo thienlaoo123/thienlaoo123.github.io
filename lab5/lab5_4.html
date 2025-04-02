@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Три колонки с flexbox</title>
+  <style>
+    .wrapper {
+      display: flex;
+      margin: 0 auto;         /* Центрирование обёртки */
+      min-width: 1000px;       /* 200px + 600px + 200px */
+      align-items: flex-start; /* Вертикальное выравнивание по верхнему краю */
+    }
+    #left {
+      width: 200px;
+      background: #ccf;
+      padding: 10px;
+    }
+    #center {
+      width: 600px;
+      background: #cfc;
+      padding: 10px;
+    }
+    #right {
+      width: 200px;
+      background: #fcc;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div id="left">
+      Левая колонка<br>Контент...
+    </div>
+    <div id="center">
+      Центральная колонка<br>Контент...
+    </div>
+    <div id="right">
+      Правая колонка<br>Контент...
+    </div>
+  </div>
+</body>
+</html>
