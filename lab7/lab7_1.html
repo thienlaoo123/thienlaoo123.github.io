@@ -40,6 +40,12 @@
       padding: 20px 0;
       text-align: center;
     }
+    /* Задаём одинаковый размер для всех изображений в блоке #work */
+    #work .img-fluid {
+      width: 300px;        /* Ширина */
+      height: 400px;       /* Высота */
+      object-fit: cover;   /* Обрезаем изображение, сохраняя пропорции */
+    }
   </style>
 </head>
 <body>
@@ -61,15 +67,15 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Главная</a>
               </li>
-              <!-- Пункт меню "О компании" -->
+              <!-- Пункт меню "О себе" -->
               <li class="nav-item">
                 <a class="nav-link" href="#main">О себе</a>
               </li>
-              <!-- Пункт меню "Наш метод" -->
+              <!-- Пункт меню "Увлечения" -->
               <li class="nav-item">
                 <a class="nav-link" href="#method">Увлечения</a>
               </li>
-              <!-- Пункт меню "Наши проекты" -->
+              <!-- Пункт меню "Достижения" -->
               <li class="nav-item">
                 <a class="nav-link" href="#work">Достижения</a>
               </li>
@@ -111,7 +117,7 @@
         </div>
       </div>
     </div>
-    <!-- Блок, содержащий информацию об основных методах компании -->
+    <!-- Блок, содержащий информацию об основных методах -->
     <div id="method">
       <div class="row">
         <div class="col-md-12">
@@ -120,7 +126,7 @@
         </div>
       </div>
     </div>
-    <!-- Блок, содержащий портфолио компании -->
+    <!-- Блок, содержащий портфолио -->
     <div id="work">
       <!-- Создание ряда с выравниванием текста по центру и фоном #f35e59 -->
       <div class="row" style="text-align:center; background:#f35e59; color:#fff; padding:20px 0;">
