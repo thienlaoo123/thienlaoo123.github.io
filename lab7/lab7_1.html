@@ -40,11 +40,11 @@
       padding: 20px 0;
       text-align: center;
     }
-    /* Новый класс для одинакового размера изображений */
-    .img-fixed {
-      width: 300px;
-      height: 200px;
-      object-fit: cover;
+    /* Класс для одинакового размера изображений */
+    .img-same {
+      width: 300px;      /* или иные значения, сохраняя пропорцию 3:4 */
+      height: 400px;
+      object-fit: cover; /* изображение будет обрезаться для заполнения заданного размера */
     }
   </style>
 </head>
@@ -55,7 +55,7 @@
     <header>
       <h1>Добро пожаловать в мой блог</h1>
       <p>Откройте для себя мои увлечения и достижения</p>
-      <!-- Навигационная шапка по примеру (адаптировано для Bootstrap 5) -->
+      <!-- Навигационная шапка -->
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bs-menu" aria-controls="bs-menu" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,24 +63,19 @@
           </button>
           <div class="collapse navbar-collapse" id="bs-menu">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <!-- Активный пункт меню "Главная" -->
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Главная</a>
               </li>
-              <!-- Пункт меню "О компании" -->
               <li class="nav-item">
                 <a class="nav-link" href="#main">О себе</a>
               </li>
-              <!-- Пункт меню "Наш метод" -->
               <li class="nav-item">
                 <a class="nav-link" href="#method">Увлечения</a>
               </li>
-              <!-- Пункт меню "Наши проекты" -->
               <li class="nav-item">
                 <a class="nav-link" href="#work">Достижения</a>
               </li>
             </ul>
-            <!-- Список, выровненный по правому краю -->
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
                 <a class="nav-link" href="#" style="padding-top:8px; padding-bottom:8px;">
@@ -98,8 +93,7 @@
     </div>
     <!-- Блок об услугах компании -->
     <div id="main">
-      <!-- Ряд с выравниванием по центру -->
-      <div class="row" style="text-align:center;">
+      <div class="row text-center">
         <h2>Борисов Александр Сергеевич</h2>
         <p class="lead"></p>
         <hr>
@@ -128,29 +122,24 @@
     </div>
     <!-- Блок, содержащий портфолио компании -->
     <div id="work">
-      <!-- Создание ряда с выравниванием текста по центру и фоном #f35e59 -->
-      <div class="row" style="text-align:center; background:#f35e59; color:#fff; padding:20px 0;">
-        <!-- Заголовок 2 уровня -->
+      <div class="row text-center" style="background:#f35e59; color:#fff; padding:20px 0;">
         <h2>Сферы деятельности</h2>
-        <!-- Дополнительный текст под заголовком -->
         <p class="lead">Сфера деятельности включает учёбу, науку, работу, волонтёрство, творчество, спорт, общественную деятельность, предпринимательство и изучение языков.</p>
-        <!-- Горизонтальная линия -->
         <hr>
-        <!-- Пример блока портфолио: 3 колонки -->
         <div class="col-md-4">
-          <img src="img1/iam.jpg" alt="Проект 1" class="img-fluid img-fixed">
+          <img src="img1/iam.jpg" alt="Проект 1" class="img-fluid img-same">
           <h4>Обучение</h4>
-          <p>Учеба очень важна, но не всегда интересна, и всё-таки приходится перебарывать себя и разбираться: если тема для меня интересна, то я готов тратить усилия.</p>
+          <p>Учёба очень важна, но не всегда интересна, и всё-таки приходится перебарывать себя и разбираться: если тема для меня интересна, то я готов тратить усилия.</p>
         </div>
         <div class="col-md-4">
-          <img src="img1/pervie.jpg" alt="Проект 2" class="img-fluid img-fixed">
+          <img src="img1/pervie.jpg" alt="Проект 2" class="img-fluid img-same">
           <h4>Активизм</h4>
-          <p>Движение первых, юнармия — организации, которые помогли мне проявить себя, завести новые знакомства и научиться работать в команде.</p>
+          <p>«Движение первых», юнармия — организации, которые помогли мне проявить себя, завести новые знакомства и научиться работать в команде.</p>
         </div>
         <div class="col-md-4">
-          <img src="img1/voleybool.jpg" alt="Проект 3" class="img-fluid img-fixed">
+          <img src="img1/voleybool.jpg" alt="Проект 3" class="img-fluid img-same">
           <h4>Волейбол</h4>
-          <p>Спорт — неотъемлемая часть моей жизни: командные игры не только интересны, но и полезны для здоровья, а участие в соревнованиях позволяет сразиться с достойными противниками.</p>
+          <p>Спорт — неотъемлемая часть моей жизни: командные игры не только интересны, но и полезны для здоровья, а участие в соревнованиях позволяет сразиться с достойными соперниками.</p>
         </div>
       </div>
     </div>
